@@ -6,7 +6,8 @@ body {
     align-items: center;
     font-family: 'Kumbh Sans', sans-serif;
     font-size: 12px;
-    color: hsl(238, 29%, 16%);
+    font-weight: 400;
+    color: hsl(240, 6%, 50%);
     background-image: linear-gradient( hsl(273, 75%, 66%),hsl(240, 73%, 65%)); 
     padding: 0 70px;
 
@@ -22,37 +23,74 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 50px;
+    padding: 30px;
     background-color: #fff;
     border-radius: 15px;
     z-index: 1;
     margin: -50px
 }
 
-
-
-.row {
-    width: 100%;
-  
-    border-bottom: solid 1px hsl(240, 5%, 91%);
-    
-
+button {
+    background: none;
 }
+
 
 .accordion {
     cursor: pointer;
-    font-weight: 100;
+    padding: 18px;
+    width: 100%;
+    border:none;
+    text-align: left;
+    transition: 0.45s;
+    color: hsl(240, 6%, 50%);
+
+    
 }
+
+
+
+.accordion:hover {
+    color: hsl(14, 88%, 65%);
+}
+
+
+.active.accordion {
+    color: hsl(237, 12%, 33%);
+    font-weight: 700;
+} 
+
+
+.accordion:after {
+    content: url(./images/icon-arrow-down.svg);
+    float: right;
+    margin-left: 5px;
+
+}
+
+
+.active:after {
+    -webkit-transform: scaleY(-1);
+  transform: scaleY(-1);
+}
+
 
 .panel {
-    display: none;
+    padding: 0 18px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    border-bottom: solid 1px hsl(240, 5%, 91%);
 }
-
-
-
 
 
 @media only screen and (min-width: 600px) {
+    img {
+        width: 35%;
+    }
+}
+
+
+@media only screen and (min-width: 1026px) {
     body {
         flex-direction: row;
     }
@@ -63,7 +101,7 @@ main {
 
     main {
         flex-direction: row;
-        width: 45%;
+        width: 60%;
         background-image: url('./images/bg-pattern-desktop.svg');
         background-repeat: no-repeat;
         background-position-x: left;
@@ -72,14 +110,19 @@ main {
     
     }
 
+    .accordion:after{
+        margin-left: 40px;
+    }
+
 
     .left-space {
-     width: 40%;
+     width: 60%;
       
     }
 
     .info-text {
-        border: solid 1px green;
+       
+        width: 50%;
     }
     
 }
